@@ -100,8 +100,8 @@
 /* BootStrap Settings                                                  */
 /*                                                                     */
 /* ******************************************************************* */
-#define IMG_ADDRESS 		0x20000			/* Image Address in NandFlash */
-#define	IMG_SIZE		0x40000			/* Image Size in NandFlash */
+#define IMG_ADDRESS 	0x20000			/* U-Boot Image Address in NandFlash */
+#define	IMG_SIZE		0x80000			/* U-Boot Image Size in NandFlash */
 
 #define MACH_TYPE		0x726			/* AT91SAM9M10G45-EK */
 #define JUMP_ADDR		0x73F00000		/* Final Jump Address */
@@ -109,7 +109,7 @@
 /* ******************************************************************* */
 /* Application Settings                                                */
 /* ******************************************************************* */
-#undef CFG_DEBUG
+#define CFG_DEBUG
 #undef DEBUG
 #undef CFG_DATAFLASH
 

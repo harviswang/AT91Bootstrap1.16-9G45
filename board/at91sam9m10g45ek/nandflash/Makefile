@@ -3,7 +3,7 @@ ifndef ERASE_FCT
 ERASE_FCT=rm -f
 endif
 ifndef CROSS_COMPILE
-CROSS_COMPILE=arm-elf-
+CROSS_COMPILE=arm-none-linux-gnueabi-
 endif
 
 TOOLCHAIN=gcc

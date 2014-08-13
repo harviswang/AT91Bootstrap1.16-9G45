@@ -60,6 +60,7 @@ int main(void)
 	/* Load from Nandflash in RAM */
 #ifdef CFG_NANDFLASH
 	load_nandflash(IMG_ADDRESS, IMG_SIZE, JUMP_ADDR);
+	dbg_print("Copy 0x80000 bytes from 0x20000 Start...\n\r");
 #endif
 
 	/* Load from Norflash in RAM */
