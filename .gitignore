@@ -21,4 +21,7 @@ binaries
 *.o
 tags
 *.swp
+*.bin
+*.elf
+*.map
 
