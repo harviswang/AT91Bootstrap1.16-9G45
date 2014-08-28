@@ -30,10 +30,10 @@ Go into the project directory
 
 Configurations are in Makefile and at91sam9261ek.h files and can be modified according your needs.
 
-1.2.2 AT91SAM9260-EK
+1.2.2 AT91SAM9M10G45-EK
 ---------------------
 Go into the project directory
->  cd board/at91sam9260ek/dataflash
+>  cd board/at91sam9m10g45/nandflash
 >  make
 
 Configurations are in Makefile and at91sam9260ek.h files and can be modified according your needs.

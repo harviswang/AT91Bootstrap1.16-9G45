@@ -204,12 +204,26 @@ void df_hw_init(void)
 
 #ifdef CFG_NANDFLASH
 /*------------------------------------------------------------------------------*/
-/* \fn    nand_recovery						*/
-/* \brief This function erases NandFlash Block 0 if BP4 is pressed 		*/
+/* \fn    nand_recovnand_recoveryery						*/
+/* \brief This function erases NandFlash Block 0 if BP2 is pressed 		*/
 /*        during boot sequence							*/
 /*------------------------------------------------------------------------------*/
 static void nand_recovery(void)
 {
+	/* Configure PIOs */
+	const struct pio_desc bp2_pio[] = {
+		{"BP2", AT91C_PIN_PC(27), 1, PIO_PULLUP, PIO_INPUT},
+		{(char *) 0, 0, 0, PIO_DEFAULT, PIO_PERIPH_A},
+	};
+
+	/* Configure the PIO controller */
+	writel((1 << AT91C_ID_PIOC), PMC_PCER + AT91C_BASE_PMC);
+	pio_setup(bp2_pio);
+	
+	/* If BP2 is pressed during Boot sequence */
+	/* Erase NandFlash block 0*/
+	if (!pio_get_value(AT91C_PIN_PC(27)) )
+		AT91F_NandEraseBlock0();
 
 }
 
